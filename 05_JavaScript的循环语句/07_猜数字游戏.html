@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 猜数字
+    // 随机生成0-99之间的数字 左闭右开
+     var randNum = Math.floor(Math.random(100) * 100)
+     // 玩家有7次猜测的机会
+     var count = 7
+     for (var i = 0; i < count; i++) {
+      // 玩家猜测一个数字，输入到程序中
+      var guessNum = Number(prompt("猜测的数字："))
+      // 电脑根据输入的数字打印：大了/对了/小了
+      if (guessNum === randNum) {
+        alert("猜对了")
+        break
+      } else if (guessNum > randNum) {
+        alert("大了")
+      } else {
+        alert("小了")
+      }
+      if (i === count - 1) {
+      alert("您的机会用完了")
+     }
+     }
+
+
+
+  </script>
+  
+</body>
+</html>
