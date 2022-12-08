@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    /*
+      如果一个函数被new操作符调用
+        1. 创建出来一个新的空对象
+        2. 让this指向这个空对象
+        3. 执行函数体的代码块
+        4. 如果没有明确的返回一个非空对象，那么this指向的对象会自动返回
+
+    */
+    function coder(name, age, height) {
+      this.name = name
+      this.age = age
+      this.height = height
+      this.running = function() {
+        console.log("running~")
+      }
+      return this
+    }
+
+    // 在函数调用的前面加new 关键字（操作符）
+    var stu1 = new coder("kache1", 18, 1.88)
+    var stu2 = new coder("kache2", 20, 1.68)
+    console.log(stu1, stu2)
+
+  </script>
+  
+</body>
+</html>
